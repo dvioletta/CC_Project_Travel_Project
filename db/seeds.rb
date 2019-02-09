@@ -35,6 +35,27 @@ country13.save()
 country14.save()
 country15.save()
 
+city1 = City.new({'country_id' => country1.id, 'name' => 'Edinburgh'})
+city2 = City.new({'country_id' => country1.id, 'name' => 'Perth'})
+city3 = City.new({'country_id' => country2.id, 'name' => 'London'})
+city4 = City.new({'country_id' => country2.id, 'name' => 'Brighton'})
+city5 = City.new({'country_id' => country6.id, 'name' => 'Paris'})
+city6 = City.new({'country_id' => country6.id, 'name' => 'Lyon'})
+city7 = City.new({'country_id' => country10.id, 'name' => 'New York'})
+city8 = City.new({'country_id' => country10.id, 'name' => 'Portland'})
+city9 = City.new({'country_id' => country13.id, 'name' => 'Saint Petersburg'})
+city10 = City.new({'country_id' => country13.id, 'name' => 'Moscow'})
+
+city1.save()
+city2.save()
+city3.save()
+city4.save()
+city5.save()
+city6.save()
+city7.save()
+city8.save()
+city9.save()
+city10.save()
 
 binding.pry
 nil
