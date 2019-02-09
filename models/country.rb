@@ -31,8 +31,12 @@ class Country
   def self.all() #class method to return all countries useful for later updates
     sql = "SELECT * FROM countries"
     country_data = SqlRunner.run(sql)
-    country = map.items(country_data)
+    country = map_items(country_data)
     return country
+  end
+
+  def self.map_items(country_data) #this should allow map of items in above
+    return country_data.map { |country| Country.new(country) }
   end
 
 
