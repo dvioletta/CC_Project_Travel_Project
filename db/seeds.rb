@@ -57,5 +57,27 @@ city8.save()
 city9.save()
 city10.save()
 
+seed1 = Seed.new({'country_id' => country1.id, 'city_id' => city1.id, 'visited' => 'visited'})
+seed2 = Seed.new({'country_id' => country1.id, 'city_id' => city2.id, 'visited' => 'visited'})
+seed3 = Seed.new({'country_id' => country2.id, 'city_id' => city3.id, 'visited' => 'visited'})
+seed4 = Seed.new({'country_id' => country2.id, 'city_id' => city4.id, 'visited' => 'not visited'})
+seed5 = Seed.new({'country_id' => country6.id, 'city_id' => city5.id, 'visited' => 'visited'})
+seed6 = Seed.new({'country_id' => country6.id, 'city_id' => city6.id, 'visited' => 'not visited'})
+seed7 = Seed.new({'country_id' => country10.id, 'city_id' => city7.id, 'visited' => 'visited'})
+seed8 = Seed.new({'country_id' => country10.id, 'city_id' => city8.id, 'visited' => 'not visited'})
+seed9 = Seed.new({'country_id' => country13.id, 'city_id' => city9.id, 'visited' => 'not visited'})
+seed10 = Seed.new({'country_id' => country13.id, 'city_id' => city10.id, 'visited' => 'not visited'})
+
+seed1.save()
+seed2.save()
+seed3.save()
+seed4.save()
+seed5.save()
+seed6.save()
+seed7.save()
+seed8.save()
+seed9.save()
+seed10.save()
+
 binding.pry
 nil
