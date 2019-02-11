@@ -22,6 +22,7 @@ end
   end
 
   post '/visit' do
-    City.new(params).save
-    erb(:create)
+  @city = City.new(params)
+  @city.save
+  erb(:create)
   end
