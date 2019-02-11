@@ -5,11 +5,11 @@ class Trip
   attr_reader :id
   attr_accessor :visited, :country_id, :city_id
 
-  def initialize(details)
+  def initialize(options)
     @id = options['id'].to_i if options['id']
+    @country_id = options['country_id'].to_i
+    @city_id = options['city_id'].to_i
     @visited = options['visited']
-    @country_id = options[country_id].to_i
-    @city_id = options[city_id].to_i
   end
 
   def save()
@@ -22,8 +22,7 @@ class Trip
       RETURNING id"
       values = [@country_id, @city_id, @visited]
       result = SqlRunner.run(sql, values)
-      id = result.first['id']
-      @id = id
+        @id = result.first()['id'].to_i
     end
 
     def city()

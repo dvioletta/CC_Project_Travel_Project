@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Country
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :id
 
   def initialize(details)
   @id = details["id"].to_i if details["id"]
@@ -13,10 +13,10 @@ class Country
   def save #save for adding items to the database
     sql = "INSERT INTO countries(name)
     VALUES($1)
-    RETURNING id;"
+    RETURNING id"
     values = [@name]
     result = SqlRunner.run(sql, values)
-    id = id.to_i
+    @id = result.first()['id'].to_i
   end
 
   def self.find(id) #for finding a country this is required for city method

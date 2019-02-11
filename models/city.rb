@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('country')
 
 class City
 
@@ -7,18 +8,24 @@ class City
 
     def initialize(options)
       @id = options['id'].to_i if options['id']
+      @country_id = options['country_id'].to_i
       @name = options['name']
-      @country_id = options[country_id].to_i
     end
 
     def save()
-      sql = "INSERT INTO cities (country_id, name)
-      ValUES($1, $2)
-      RETURNING id"
-      values = [@country_id, @name]
-      result = SqlRunner.run(sql, values)
-      id = reult.first['id']
-      @id = id
+      sql = "INSERT INTO cities
+  (
+    country_id,
+    name
+  )
+  VALUES
+  (
+    $1, $2
+  )
+  RETURNING id"
+  values = [@country_id, @name]
+  result = SqlRunner.run(sql, values)
+  @id = result.first()['id'].to_i
     end
 
     def country() #this is the method to bring country data for use here
@@ -63,5 +70,14 @@ class City
         city = City.new(result)
         return city
       end
+
+    def country()
+    sql = "SELECT * FROM country
+    WHERE id = $1"
+    values = [@country_id]
+    country = SqlRunner.run(sql, values)
+    result= Country.new(country.first)
+    return result
+  end
 
 end
