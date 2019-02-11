@@ -3,6 +3,10 @@ require_relative('../models/country')
 require_relative('../models/trip')
 require ('pry')
 
+Country.delete_all
+City.delete_all
+Trip.delete_all
+
 country1 = Country.new({'name' => 'Scotland'})
 country2 = Country.new({'name' => 'England'})
 country3 = Country.new({'name' => 'Wales'})

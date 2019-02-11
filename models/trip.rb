@@ -75,7 +75,7 @@ class Trip
         return trip
       end
 
-      def country()
+      def country_find()
       sql = "SELECT * FROM country
       WHERE id = $1"
       values = [@country_id]
@@ -85,8 +85,7 @@ class Trip
     end
 
 
-
-    def city()
+    def city_find()
     sql = "SELECT * FROM city
     WHERE id = $1"
     values = [@city_id]
@@ -94,6 +93,15 @@ class Trip
     result= City.new(city.first)
     return result
   end
+
+  def self.delete_all
+    sql = "DELETE FROM trips"
+    SqlRunner.run(sql)
+    end
+
+
+
+
 
 
 

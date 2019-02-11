@@ -1,1 +1,18 @@
-<h2>Create a new trip</h2>
+<h2>Create a new place to visit</h2>
+<form method="POST" action="/visit">
+  <div>
+
+    <div>
+      <label for="Country">Select Country:</label>
+      <select name="country_id" id="Country">
+      <% @countries.each do |country| %>
+            <option value="<%= country.id%>"><%=country.name%></option>
+        <% end %>
+          </select>
+        </div>
+
+    <div>
+      <label for="City">City:</label>
+      <input type="text" name="City" id="city_id"/>
+    </div>
+  </div>

@@ -80,6 +80,12 @@ class City
         return city
       end
 
+      def self.delete_all
+        sql = "DELETE FROM cities"
+        SqlRunner.run(sql)
+        end
+
+
   #   def country()
   #   sql = "SELECT * FROM countri
   #   WHERE id = $1"

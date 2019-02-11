@@ -6,7 +6,22 @@ require_relative('models/trip')
 also_reload('./models/*')
 
 
-get '/visits' do
+get '/visits/list' do
   @cities = City.all
   erb(:index)
 end
+
+  get '/visits/status' do
+  @trips = Trip.all
+  erb(:Sindex)
+  end
+
+  get '/visit/new' do
+    @countries = Country.all
+    erb(:new)
+  end
+
+  post '/visit' do
+    City.new(params).save
+    erb(:create)
+  end

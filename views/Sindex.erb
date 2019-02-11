@@ -1,0 +1,14 @@
+<h2>All Current Trips Planned and Taken</h2>
+
+<div>
+ <% @trips.each do |trip|%>
+
+
+ <p>Country:<%= trip.country.name %></p>
+ <p>City: <%= trip.city.name %></p>
+ <p>Status:<%= trip.visited%></p>
+ <%end%>
+
+
+
+  </div>

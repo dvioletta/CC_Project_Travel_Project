@@ -39,7 +39,12 @@ class Country
     return country_data.map { |country| Country.new(country) }
   end
 
-  
+  def self.delete_all
+    sql = "DELETE FROM countries"
+    SqlRunner.run(sql)
+    end
+
+
 
 
 end
