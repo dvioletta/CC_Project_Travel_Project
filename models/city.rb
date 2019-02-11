@@ -78,7 +78,7 @@ class City
         result = SqlRunner.run(sql, values).first
         city = City.new(result)
         return city
-      end
+        end
 
       def self.delete_all
         sql = "DELETE FROM cities"

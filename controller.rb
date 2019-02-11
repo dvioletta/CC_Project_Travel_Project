@@ -26,8 +26,13 @@ end
   redirect to '/visits/list'
   end
 
-  get '/visit/edit' do
-    @country = Country.all
+  # post '/visit/:id' do
+  #   @trip = Trip.new(params).update
+  #     redirect to 'visits/status'
+  # end
+
+  get '/visit/:id/edit' do
     @city = City.find(params['id'])
+    @countries = Country.all
     erb(:edit)
   end
