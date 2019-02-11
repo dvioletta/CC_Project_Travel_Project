@@ -75,6 +75,26 @@ class Trip
         return trip
       end
 
+      def country()
+      sql = "SELECT * FROM country
+      WHERE id = $1"
+      values = [@country_id]
+      country = SqlRunner.run(sql, values)
+      result= Country.new(country.first)
+      return result
+    end
+
+
+
+    def city()
+    sql = "SELECT * FROM city
+    WHERE id = $1"
+    values = [@city_id]
+    city = SqlRunner.run(sql, values)
+    result= City.new(city.first)
+    return result
+  end
+
 
 
 end

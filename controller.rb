@@ -6,6 +6,7 @@ require_relative('models/trip')
 also_reload('./models/*')
 
 
-get '/' do
-  
+get '/visits' do
+  @cities = City.all
+  erb(:index)
 end

@@ -39,7 +39,7 @@ class Country
     return country_data.map { |country| Country.new(country) }
   end
 
-
+  
 
 
 end

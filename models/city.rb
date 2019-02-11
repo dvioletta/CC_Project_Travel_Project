@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-require_relative('country')
+require_relative('./country')
 
 class City
 
@@ -32,6 +32,15 @@ class City
       country = Country.find(@country_id)
       return country
     end
+
+    def find_country_name
+      sql = "SELECT * FROM countries WHERE country.id = $1"
+      values = [@country_id]
+      result = SqlRunner.run(sql, values)
+      return Country.new(result.first)
+    end
+
+
 
     def update() #†his method should also update the country data
       sql = "UPDATE cities
@@ -71,13 +80,13 @@ class City
         return city
       end
 
-    def country()
-    sql = "SELECT * FROM country
-    WHERE id = $1"
-    values = [@country_id]
-    country = SqlRunner.run(sql, values)
-    result= Country.new(country.first)
-    return result
-  end
+  #   def country()
+  #   sql = "SELECT * FROM countri
+  #   WHERE id = $1"
+  #   values = [@country_id]
+  #   country = SqlRunner.run(sql, values)
+  #   result= Country.new(country.first)
+  #   return result
+  # end
 
 end
