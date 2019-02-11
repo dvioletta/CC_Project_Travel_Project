@@ -1,0 +1,29 @@
+<h2>Edit <%= @student.format_name %></h2>
+<form method="POST" action="/visit/<%= @city.id %>">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="Country">Select Country:</label>
+      <select name="country_id" id="house_select" selected="<%= @city.country_id  %>">
+        <% @houses.each do |house| %>
+          <% if country.id == @city.coutry_id %>
+            <option value=<%= country.id %> selected></option>
+          <% else %>
+            <option value=<%= country.id %>></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+
+    <div>
+      <label for="City">City:</label>
+      <input type="text" name="City" id="city_id"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Confirm"/>
+      </div>
+
+      </div>
+      </form>
+      

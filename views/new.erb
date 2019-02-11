@@ -6,7 +6,7 @@
       <label for="Country">Select Country:</label>
       <select name="country_id" id="Country">
       <% @countries.each do |country| %>
-            <option value="<%= country.id%>"><%=country.name%></option>
+            <option value=<%= country.id%>><%=country.name%></option>
         <% end %>
           </select>
         </div>
@@ -16,6 +16,6 @@
       <input type="text" name="City" id="city_id"/>
     </div>
 
-    <<input type="submit" value="Create Trip">
+    <input type="submit" value="Create Trip">
   </div>
   </form>

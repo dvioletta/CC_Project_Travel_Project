@@ -22,7 +22,6 @@ end
   end
 
   post '/visit' do
-  @city = City.new(params)
-  @city.save
-  erb(:create)
+  City.new(params).save
+  redirect to '/visits/list'
   end
