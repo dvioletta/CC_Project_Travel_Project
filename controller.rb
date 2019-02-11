@@ -25,3 +25,9 @@ end
   City.new(params).save
   redirect to '/visits/list'
   end
+
+  get '/visit/edit' do
+    @country = Country.all
+    @city = City.find(params['id'])
+    erb(:edit)
+  end

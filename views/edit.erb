@@ -4,8 +4,8 @@
 
     <div class="form-el">
       <label for="Country">Select Country:</label>
-      <select name="country_id" id="house_select" selected="<%= @city.country_id  %>">
-        <% @houses.each do |house| %>
+      <select name="country_id" id="house_select" selected="<%= @city.country_id%>">
+        <% @.each do |house| %>
           <% if country.id == @city.coutry_id %>
             <option value=<%= country.id %> selected></option>
           <% else %>
@@ -26,4 +26,3 @@
 
       </div>
       </form>
-      
