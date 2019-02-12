@@ -7,6 +7,10 @@ also_reload('./models/*')
 require('pry')
 
 
+get '/' do
+  erb(:hello)
+end
+
 get '/visits/list' do
   @cities = City.all
   erb(:index)
@@ -28,7 +32,7 @@ end
   options = {'country_id'=>params['country_id'], 'city_id'=>city.id, 'visited'=>'not visited'}
   trip = Trip.new(options)
   trip.save
-  redirect to '/visits/list'
+  redirect to '/visits/status'
   end
 
   post '/visit/:id' do

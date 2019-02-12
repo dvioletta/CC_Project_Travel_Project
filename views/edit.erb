@@ -1,8 +1,8 @@
 <h2>Edit <%=@city.name%></h2>
 <form method="POST" action="/visit/<%= @trip.id%>" >
-  <div>
+  <div class="form-wrapper">
 
-    <div>
+    <div class="form-el">
       <label for="Country">Select Country:</label>
       <select name="country_id" id="country_select" selected="<%= @city.country_id%>">
         <% @countries.each do |country| %>
@@ -19,9 +19,8 @@
       <input type="hidden" name="city_id" id="City" value='<%= @city.id%>'/>
     </div>
 
-    <div>
+    <div class="form-el">
       <label for="Trip">Trip:</label>
-
       <% @trips.each do |trip| %>
       <% if trip.city_id == @city.id %>
         <input type="text" name="visited" id="status" value='<%= trip.visited %>'/>
@@ -32,7 +31,7 @@
 
 
 
-    <div>
+    <div class="form-el">
       <input type="submit" value="Confirm"/>
       </div>
 
