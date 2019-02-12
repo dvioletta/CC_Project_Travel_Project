@@ -13,8 +13,8 @@ get '/visits/list' do
 end
 
   get '/visits/status' do
-  @trips = Trip.all
-  erb(:Sindex)
+    @trips = Trip.all
+    erb(:Sindex)
   end
 
   get '/visit/new' do
@@ -22,7 +22,7 @@ end
     erb(:new)
   end
 
-  post '/visit' do
+  post '/visit' do #posts to two tables at once
   city = City.new(params)
   city.save
   options = {'country_id'=>params['country_id'], 'city_id'=>city.id, 'visited'=>'not visited'}
@@ -48,4 +48,10 @@ end
   get '/visit/:id' do
     @city = City.find(params['id'])
     erb(:show)
+  end
+
+  post '/visit/:id/delete' do
+    trip = Trip.find_by_city_id(params['id'])
+    trip.delete()
+    erb(:delete)
   end
