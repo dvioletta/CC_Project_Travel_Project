@@ -26,6 +26,13 @@ class Trip
         @id = result.first()['id'].to_i
     end
 
+    def self.find_by_city_id(city_id)
+      sql = "Select * FROM trips WHERE city_id=$1"
+      values = [city_id]
+      result = SqlRunner.run(sql, values)
+      return Trip.new(result.first)
+    end
+
     def city()
       city = City.find(@city_id)
       return city

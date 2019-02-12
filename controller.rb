@@ -41,6 +41,7 @@ end
     @city = City.find(params['id'])
     @countries = Country.all
     @trips = Trip.all
+    @trip = Trip.find_by_city_id(@city.id)
     erb(:edit)
   end
 

@@ -1,5 +1,5 @@
-<h2>Edit<%=@city.name%></h2>
-<form method="POST" action="/visit/:id" >
+<h2>Edit <%=@city.name%></h2>
+<form method="POST" action="/visit/<%= @trip.id%>" >
   <div>
 
     <div>
@@ -16,8 +16,7 @@
     </div>
 
     <div>
-      <label for="City">City:</label>
-      <input type="text" name="city_id" id="City" value='<%= @city.id%>'/>
+      <input type="hidden" name="city_id" id="City" value='<%= @city.id%>'/>
     </div>
 
     <div>
