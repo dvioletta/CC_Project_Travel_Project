@@ -20,6 +20,20 @@
       <input type="text" name="name" id="City" value='<%= @city.name%>'/>
     </div>
 
+    <div>
+      <label for="Trip">Trip:</label>
+      <% in_trips = false %>
+      <% @trips.each do |trip| %>
+      <% if trip.city_id == @city.id %>
+        <input type="text" name="visited" id="status" value='<%= trip.visited %>'/>
+        <% in_trips = true %>
+      <% end %>
+      <% end %>
+      <% if in_trips == false %>
+        <input type="text" name="visited" id="status" value='Not Visited'/>
+      <% end %>
+    </div>
+
 
 
     <div>
