@@ -3,4 +3,30 @@ body {
   font-family: 'Rye' ,cursive;
   color: blue;
   background-color: yellow;
+
+}
+
+ul {
+  padding: 0px;
+  margin: auto;
+  list-style-type: none;
+}
+
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+#trip-wrapper{
+  font-family: 'Lucida Grande';
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.trip {
+  padding-left: 10px
 }

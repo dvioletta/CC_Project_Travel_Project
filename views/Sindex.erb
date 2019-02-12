@@ -1,16 +1,17 @@
 <h2>All Current Trips Planned and Taken</h2>
 
-<div>
+<div id="trip-wrapper">
  <% @trips.each do |trip|%>
 
-
- <p>Country:<%= trip.country.name %></p>
+<div class="trip">
+ <p>Country: <%= trip.country.name %></p>
  <p>City: <%= trip.city.name %></p>
- <p>Status:<%= trip.visited%></p>
+ <p>Status: <%= trip.visited%></p>
 
 <a href="/visit/<%= trip.city.id %>/edit">Edit</a>
 <form action="/visit/<%= trip.city.id %>/delete" method="POST">
   <input type="submit" value="Delete"></form>
+  </div>
  <%end%>
 
   </div>
