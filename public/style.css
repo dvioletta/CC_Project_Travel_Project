@@ -1,25 +1,16 @@
 body {
-  padding: 30px;
+  padding: 0px;
   font-family: 'Lucida Grande' ,cursive;
   font-size: 35px;
+  text-align: center;
   color: blue;
   background-image: url("/travel-background.jpg");
   background-size: cover;
 
 }
 
-ul {
-  padding: 0px;
-  margin: auto;
-  list-style-type: none;
-}
 
 
-.flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 
 #trip-wrapper{
@@ -45,6 +36,12 @@ ul {
   font-family: 'Lucida Grande',sans-serif;
   border: 1px solid;
 
+}
+
+ul {
+  margin-left: 40px;
+  margin-right: 40px;
+  display: inline-block;
 }
 
 #delete{
