@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry')
 
 class Trip
 
@@ -44,7 +45,7 @@ class Trip
         =
         ($1, $2, $3)
         WHERE id = $4"
-        values = [@country_id, @city_id, @visited]
+        values = [@country_id, @city_id, @visited, @id]
         SqlRunner.run(sql, values)
       end
 

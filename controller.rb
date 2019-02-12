@@ -4,6 +4,7 @@ require_relative('models/city')
 require_relative('models/country')
 require_relative('models/trip')
 also_reload('./models/*')
+require('pry')
 
 
 get '/visits/list' do
@@ -22,12 +23,17 @@ end
   end
 
   post '/visit' do
-  City.new(params).save
+  city = City.new(params)
+  city.save
+  options = {'country_id'=>params['country_id'], 'city_id'=>city.id, 'visited'=>'not visited'}
+  trip = Trip.new(options)
+  trip.save
   redirect to '/visits/list'
   end
 
   post '/visit/:id' do
-    @trip = Trip.new(params).update
+    @trip = Trip.new(params)
+    @trip.update
       redirect to 'visits/status'
   end
 
