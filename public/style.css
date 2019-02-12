@@ -1,8 +1,10 @@
 body {
   padding: 30px;
-  font-family: 'Rye' ,cursive;
+  font-family: 'Lucida Grande' ,cursive;
   color: blue;
   background-color: yellow;
+  background-image: url("/map-travel.jpg");
+  background-size: cover;
 
 }
 
@@ -29,4 +31,13 @@ ul {
 }
 .trip {
   padding-left: 10px
+}
+
+#welcome{
+  height: 100%
+  font-family: 'Lucida Grande',sans-serif;
+  border-width: thin; 10px;
+  border-color: silver;
+
+  margin: 100px
 }
