@@ -1,9 +1,9 @@
 body {
   padding: 30px;
   font-family: 'Lucida Grande' ,cursive;
+  font-size: 35px;
   color: blue;
-  background-color: yellow;
-  background-image: url("/map-travel.jpg");
+  background-image: url("/travel-background.jpg");
   background-size: cover;
 
 }
@@ -23,21 +23,34 @@ ul {
 
 
 #trip-wrapper{
-  font-family: 'Lucida Grande';
-  color: black;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  font-family: Helvetica, serif;
+  font-size: 25px;
+   color: black;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   background-color: silver;
+    opacity: 0.7;
 }
 .trip {
+  border: 1px solid;
+  margin-inline-end: 2px;
+  margin-bottom: 3px;
   padding-left: 10px
+
 }
 
 #welcome{
   height: 100%
   font-family: 'Lucida Grande',sans-serif;
-  border-width: thin; 10px;
-  border-color: silver;
+  border: 1px solid;
 
-  margin: 100px
+}
+
+#delete{
+  font-family: Helvetica;
+  font-size: 25px
+  background-image: url("/airplane.jpg");
+  background-size: cover;
+
 }
