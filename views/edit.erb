@@ -23,7 +23,12 @@
       <label for="Trip">Trip:</label>
       <% @trips.each do |trip| %>
       <% if trip.city_id == @city.id %>
-        <input type="text" name="visited" id="status" value='<%= trip.visited %>'/>
+        <select name="visited" id="status" selected="<%= @trip.visited%>">
+          <option value='visited' selected> visited</option>
+          <option value="not visited" selected>not visited</option>
+          </select>
+
+        <!-- <input type="text" name="visited" id="status" value='<%= trip.visited %>'/> -->
       <% end %>
       <% end %>
 
