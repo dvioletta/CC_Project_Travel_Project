@@ -30,19 +30,17 @@ body {
 input[type=submit] {
   background-color: DESERT SAND
   border: 1px solid;
+  border-color: black;
+  box-shadow: 2px 4px #6D4C3D;
   color: black;
-  padding: 50px 40px;
-  text-align: center;
-  text-decoration: none;
-  flex: auto;
-  font-size: 30px;
+  padding: 10px 22px;
 }
-]
+
 
 #welcome{
   height: 100%;
   font-family: 'Lucida Grande',sans-serif;
-  border: 1px solid;
+  
 
 }
 
@@ -50,6 +48,10 @@ ul {
   margin-left: 40px;
   margin-right: 40px;
   display: inline-block;
+}
+
+form {
+  display: inline-grid;
 }
 
 .delete{
