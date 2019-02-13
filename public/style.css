@@ -3,7 +3,7 @@ body {
   font-family: 'Lucida Grande' ,cursive;
   font-size: 35px;
   text-align: center;
-  color: blue;
+  color: blanchedalmond;
   background-image: url("/travel-background.jpg");
   background-size: cover;
 
@@ -56,4 +56,11 @@ ul {
   position: absolute;
   top: 10%;
   left: 25%;
+}
+
+.new {
+  color: black;
+  position: absolute;
+  top: 20%;
+  left: 30%;
 }
